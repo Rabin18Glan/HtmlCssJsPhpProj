@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+   
+    <link rel="stylesheet" href="../../../style.css">
+  
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<div class="form-section" >
+    <h1>Login to your account</h1>
+    <form class="myform" action="./../../../../server/controller/UserController.php" method="post" onsubmit="login(event)">
+        <input name="email" placeholder="email" class="myinput" type="email" id="email">
+        <input name="password" placeholder="password" class="myinput" type="password" id="password">
+        <button class="mybtn" type="submit"  >login</button>
+        
+    </form>
+   
+</div>
+<div class="extra-info">
+<h1 class="heading">Chat Application</h1>
+<div>
+    <h2>If you are new here</h2>
+<a href="../register/register.html"><button class="mybtn">join today</button></a>
+</div>
+</div>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+body{
+    display:flex;
+}
+
+.form-section{
+    height: 100lvh;
+width: 50%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap:50px;
+
+}
+
+.extra-info{
+
+    height: 100lvh;
+    width: 50%;
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    color: white;
+}
+
+.heading{
+    font-size: 50px;
+
+ 
+}
