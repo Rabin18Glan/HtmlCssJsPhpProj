@@ -19,14 +19,14 @@
             </div>
             <div class="form-section">
         <h1>Joins us with a new account</h1>
-        <form class="myform" action="" onsubmit="register(event)">
-            <input class="myinput" placeholder="user name" type="text" name="name" id="name" required>
+        <form class="myform" id="registerform">
+            <input class="myinput" placeholder="user name" type="text" name="username" id="name" required>
             <input name="email" placeholder="email" class="myinput" type="email" id="email" required>
-            <input name="password" placeholder="password" class="myinput" type="password" id="password" required>
-            <input name="password" placeholder="confirmPassword" class="myinput" type="password" id="password" required>
+            <input name="password" placeholder="password" class="myinput" name="password" type="password" id="password" required>
+            <input name="confirm_password" placeholder="confirmPassword" name="confirm_password" class="myinput" type="password" id="confirmpassword" required>
             <button class="mybtn" type="submit">register</button>
         </form>
     </div>
-  
+  <script  src="register.js"></script>
 </body>
 </html>

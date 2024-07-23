@@ -1,32 +1,29 @@
-function register(e){
-e.event.preventDefault();
-const data = new FormData(e.target);
-const username =data.get('name');
-const email = data.get('email');
-const password = data.get('password');
-const confirmPassword = data.get('confirmPassword');
+const responseDiv = document.getElementById('response');
 
+document.getElementById('registerform').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
 
-window.location.href='./../chat/chat.html';
+    const formData = new FormData(event.target);
 
-
-// if(user.password!==user.confirmPassword){
-//     console.log("Password did not matched")
-// }
-// else{
-
-    
-// var xhr = new XMLHttpRequest();
-// xhr.open('POST', 'register.php', true);
-// xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-// xhr.onreadystatechange = function() {
-//     if (xhr.readyState == 4 && xhr.status == 200) {
-//         document.getElementById('response').innerHTML = xhr.responseText;
-//     }
-// };
-// xhr.send('username=' + username +'&email='+email+ '&password=' + password);
-
-// }
-
-
-}
+    fetch('./register.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text()) // Read the response as text
+    .then(message => {
+        if (message === "Successful") {
+            console.log("Registration successful");
+            // Redirect to a login page or another page
+            window.location.href = '../login/login.html'; // Example redirect
+        } else {
+            console.error(message);
+            // Display error message to the user
+            responseDiv.innerHTML = message;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Handle any errors that occurred during the fetch
+        responseDiv.innerHTML =error.message;
+    });
+});

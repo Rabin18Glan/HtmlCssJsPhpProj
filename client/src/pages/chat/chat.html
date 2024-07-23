@@ -20,13 +20,14 @@
         }
       }
     </script>
+   
 </head>
 <body>
    <!-- User list  -->
     <div class="users">
-        <div class="head">
-          <div  class="flex gap-5">  <img class="avatar" src="./../../../public/images/Image (9).jpg" alt="">
-            <h1>Rabin Glan</h1></div>
+        <div class="flex p-5 justify-between">
+          <div  class="flex gap-2 items-center">  <div class="uppercase font-bold text-xl  p-2 rounded-full bg-purple-500" id="avatar"></div>
+            <h1 id="name" class=" font-semibold"></h1></div>
             <button id="logout" class="power"><i class="fa fa-power-off" aria-hidden="true"></i></button>
             
         </div>
@@ -35,27 +36,8 @@
             <button class='search-icon'><i class="fa fa-search" aria-hidden="true"></i></i></button>
            </div>
 
-           <div class="users-list">
-            <div class="list-user-now"> 
-                 <img class="avatar" src="./../../../public/images/user.jpeg" alt="">
-               <div class="list-user-detail">
-                <h2>Ameera</h2>
-                <h4 id="recent-msg">Hello! How are you?</h4>
-               </div>
-            </div>
-            <div class="list-user"> 
-                <img class="avatar" src="./../../../public/images/sabina.webp" alt="">
-              <div class="list-user-detail">
-               <h2>Sabina</h2>
-               <h4>Hi</h4>
-              </div>
-           </div>
-           <div class="list-user"> 
-            <img class="avatar" src="./../../../public/images/meruna.jpeg" alt="">
-          <div class="list-user-detail">
-           <h2>Meruna</h2>
-           <h4>Okay</h4>
-          </div>
+           <div class="users-list" id="user-list">
+           
        </div>
            </div>
     </div>
@@ -65,9 +47,9 @@
 
 <!-- User-info  -->
        <div class="top-section">
-        <div class="user-info">
+        <div class="user-info" id="user-info">
             <img class="avatar" src="./../../../public/images/user.jpeg" alt="">
-            <h1 class="user-name">Ameera</h1>
+            <h1 class="user-name" id="current-chat-user">Ameera</h1>
         </div>
         <i class="fa fa-sliders icon" aria-hidden="true"></i>
        </div>
@@ -94,5 +76,8 @@
     </div>
     
 </body>
-<script src="chat.js"></script>
+<script src="./sessions/session.js"></script>
+<script src ="users/fetchUsers.js"></script>
+<!-- <script src="chat.js"></script> -->
+<script src="./sessions/logout.js"></script>
 </html>
